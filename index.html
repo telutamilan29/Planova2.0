@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Planova — Planner</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="logo.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <div class="brand">
+        <img src="logo.png" alt="logo" class="mini-logo" />
+        <h2>Planova</h2>
+      </div>
+
+      <div class="controls">
+        <button id="themeToggle" class="icon-btn">&#x1F319;</button>
+        <a class="btn link" href="chart.html">Go to Chart</a>
+      </div>
+    </header>
+
+    <main class="content">
+      <section class="add-card card">
+        <h3>Add Task</h3>
+        <form id="taskForm">
+          <div class="row">
+            <input id="taskName" placeholder="Task name (eg. Math)" required />
+          </div>
+          <div class="row time-row">
+            <label>Start</label>
+            <input id="startTime" type="time" required />
+            <label>End</label>
+            <input id="endTime" type="time" required />
+          </div>
+          <div class="row actions-row">
+            <button type="submit" class="btn primary">Add / Save</button>
+            <button type="button" id="clearAll" class="btn ghost">Clear All</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="list-card card">
+        <h3>Tasks</h3>
+        <ul id="taskList" class="task-list"></ul>
+        <p id="emptyHint" class="muted">No tasks yet — add one above!</p>
+      </section>
+    </main>
+
+    <audio id="alarmAudio" src="bird.mp3" preload="auto"></audio>
+  </div>
+  
+  <!-- Alarm Popup -->
+  <div id="alarmPopup" class="alarm-popup hidden">
+    <div class="alarm-box">
+      <h2 id="alarmTitle">Alarm</h2>
+      <button id="dismissAlarm">Dismiss</button>
+    </div>
+  </div>
+  
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Planova — Welcome</title>
+  <link rel="stylesheet" href="welcome.css" />
+  <link rel="icon" href="logo.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="wrap">
+    <header class="topbar">
+      <img src="logo.png" alt="Planova logo" class="logo" />
+      <button id="themeToggle" class="theme-btn" aria-label="Toggle theme">&#x1F319;</button>
+    </header>
+
+    <main class="hero">
+      <h1 class="title">Planova</h1>
+      <p class="subtitle">Smart study planner • Reminders at start & end times</p>
+
+      <div class="actions">
+        <a href="index.html" class="btn primary">Start Planning</a>
+        <a href="chart.html" class="btn ghost">View Chart</a>
+      </div>
+    </main>
+
+    <footer class="foot">Your personal time management and study timetable app. Organize your tasks efficiently and enjoy soothing background sounds. &#x1F525;</footer>
+  </div>
+
+  <script>
+    // Theme sync across pages
+    const themeToggle = document.getElementById('themeToggle');
+    const applyTheme = (t) => {
+      document.documentElement.setAttribute('data-theme', t);
+      localStorage.setItem('planova-theme', t);
+      themeToggle.textContent = t === 'dark' ? '🌞' : '🌗';
+    };
+
+    // Load saved
+    const saved = localStorage.getItem('planova-theme') || 'light';
+    applyTheme(saved);
+
+    themeToggle.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme') || 'light';
+      applyTheme(current === 'dark' ? 'light' : 'dark');
+    });
+  </script>
+</body>
+</html>

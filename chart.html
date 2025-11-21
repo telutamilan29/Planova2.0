@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Planova — Chart</title>
+  <link rel="stylesheet" href="chart.css" />
+  <link rel="icon" href="logo.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tagesschrift&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="wrap">
+    <header class="head">
+      <div class="brand">
+        <img src="logo.png" alt="logo" />
+        <h2>Planova — Timeline</h2>
+      </div>
+      <div class="actions">
+        <button id="themeBtn" class="icon-btn">&#x1F319;</button>
+        <a class="btn" href="index.html">Back Planner</a>
+      </div>
+    </header>
+
+    <main>
+      <section id="timeline" class="timeline card"></section>
+    </main>
+
+    <!-- Alarm popup -->
+    <div id="alarmPopup" class="alarm-popup hidden" role="dialog" aria-live="assertive">
+      <div class="alarm-card">
+        <h3 id="alarmTitle">Time for: Task</h3>
+        <p id="alarmWhen">Start / End</p>
+        <div class="alarm-controls">
+          <button id="dismissBtn" class="btn ghost">Dismiss</button>
+          <button id="snoozeBtn" class="btn primary">Snooze 5m</button>
+        </div>
+      </div>
+    </div>
+
+    <audio id="alarmAudio" src="bird.mp3" preload="auto"></audio>
+  </div>
+
+  <script src="chart.js"></script>
+</body>
+</html>
